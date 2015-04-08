@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D124DDEB-1151-4A28-AFE6-5C0036CBCE04}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GestionTareas</RootNamespace>
+    <AssemblyName>GestionTareas</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>16.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <MinimumOfficeToolsVersion>12.1</MinimumOfficeToolsVersion>
+    <IncludeAssemblyInPackage>False</IncludeAssemblyInPackage>
+    <ProjectMode>SharePointApp</ProjectMode>
+    <AppFeaturePartId>{12ba61b9-006b-4422-9b9c-8238eb5f4c90}</AppFeaturePartId>
+    <WspPartId>{554b04e3-5e31-489f-8618-e8e4a4759b2e}</WspPartId>
+    <WorkflowPartId>{3ec0a8e7-d5e4-4979-8bb6-4ca8fbe48bdc}</WorkflowPartId>
+    <CspkgPartId>{487c28e5-69d7-4f8c-a244-9d065f13c83c}</CspkgPartId>
+    <SqlPackagePartId>{4e55a924-f0b4-409f-b8e7-7ceffd31f714}</SqlPackagePartId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="AppIcon.png">
+      <OpcRelationship>manifest-icon</OpcRelationship>
+    </Content>
+    <Content Include="Descripcion\Elements.xml" />
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Content>
+    <Content Include="Finalizada\Elements.xml" />
+    <Content Include="MisTareas\Elements.xml" />
+    <Content Include="MisTareas\MisTareasInstance\Elements.xml" />
+    <Content Include="MisTareas\Schema.xml" />
+    <Content Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </Content>
+    <Content Include="Tarea\Elements.xml" />
+    <Content Include="TipoTarea\Elements.xml" />
+    <Content Include="Vencimiento\Elements.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppManifestFile Include="AppManifest.xml">
+      <SubType>Designer</SubType>
+    </AppManifestFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestionTareasWeb\GestionTareasWeb.csproj">
+      <Project>{5774F4C5-E13A-4EFC-BF0C-6E9BE4D0C5EB}</Project>
+      <Name>GestionTareasWeb</Name>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <OutputItemType>SharePointWebProjectOutput</OutputItemType>
+      <RoleName>GestionTareasWeb</RoleName>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Descripcion\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{80d985cc-868d-4d63-ad50-9da371f77bbc}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{2f8d61fd-2c21-4e76-bc84-0e6d1059be82}</FeatureId>
+    </None>
+    <None Include="Finalizada\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0ef60e8b-082a-4849-9816-6b71a235ba5e}</SharePointProjectItemId>
+    </None>
+    <None Include="MisTareas\MisTareasInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f6a1839d-18d5-4c8f-bafd-d2eb266de1bf}</SharePointProjectItemId>
+    </None>
+    <None Include="MisTareas\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ecd7b744-2e1c-4be2-8bfb-00a4a8061d61}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{53228db1-f55d-48f8-8323-6a44028e03ab}</PackageId>
+    </None>
+    <None Include="Tarea\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d1d2e143-9e45-4f5b-9035-eb70a14366cb}</SharePointProjectItemId>
+    </None>
+    <None Include="TipoTarea\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ef9e52ff-a9a7-44ac-a15c-d9bc4a9b614f}</SharePointProjectItemId>
+    </None>
+    <None Include="Vencimiento\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ca3e1d7f-0c88-43b0-bba6-e3f60aeb41e2}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

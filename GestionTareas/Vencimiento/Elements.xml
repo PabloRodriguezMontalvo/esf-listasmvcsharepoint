@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{6821f335-9f2b-4ec4-833b-b20a2fd7ee5d}"
+       Name="Vencimiento"
+       DisplayName="Vencimiento"
+       Type="DateOnly"
+       Required="TRUE"
+       Group="Custom Site Columns">
+  </Field>
+</Elements>
